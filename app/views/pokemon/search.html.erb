@@ -1,7 +1,19 @@
-<h1>Search Results</h1>
-<p><%= link_to "Back", new_search_path %></p>
+<h1>Advanced Search</h1>
 
-<% if @search.search_pokemon.empty? %>
+<%= form_with url: '/pokemon/search', method: :get, local: true do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :pokemon_type %>
+    <%= f.select :pokemon_type, options_for_select(@pokemon_types, params[:pokemon_type]), include_blank: true %><br>
+
+    <%= f.label :region %>
+    <%= f.select :region, options_for_select(@regions, params[:region]), include_blank: true %><br><br>
+
+    <%= f.submit "Search" %>
+<% end %>
+
+<% if @pokemons.empty? %>
     <p>No Pokemon were found.</p>
 <% else %>
     <table>
@@ -15,10 +27,10 @@
         </thead>
 
         <tbody>
-            <% @search.search_pokemon.each do |pokemon| %>
+            <% @pokemons.each do |pokemon| %>
             <tr>
                 <td><%= pokemon.name %></td>
-                <td><%= pokemon.type %></td>
+                <td><%= pokemon.pokemon_type %></td>
                 <td><%= pokemon.region %></td>
                 <td><%= link_to 'Show', pokemon %></td>
                 <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
@@ -26,5 +38,9 @@
             </tr>
             <% end %>
         </tbody>
-</table>
+    </table>
 <% end %>
+
+<br>
+
+<p><%= link_to "Back", '/pokemon' %></p>

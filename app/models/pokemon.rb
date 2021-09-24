@@ -1,11 +1,6 @@
 class Pokemon < ApplicationRecord
-    self.inheritance_column = "not_sti"
 
-    def self.search(search)
-        if search 
-            where(["name LIKE ?","%#{search}%"])
-        else
-            all
-        end
-    end 
+    scope :filter_by_name, -> (name) { where("name like ?", "#{name}%")}
+    scope :filter_by_pokemon_type, -> (pokemon_type) { where("pokemon_type like ?", "#{pokemon_type}%")}
+    scope :filter_by_region, -> (region) { where("region like ?", "#{region}%")}
 end

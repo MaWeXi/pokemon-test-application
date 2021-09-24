@@ -3,7 +3,8 @@ class PokemonController < ApplicationController
 
   # GET
   def index
-    @pokemons = Pokemon.search(params[:search])
+    #@pokemons = Pokemon.search(params[:search])
+    @pokemons = Pokemon.filter_by_name(params[:search])
   end
 
   # GET
@@ -56,12 +57,20 @@ class PokemonController < ApplicationController
     end
   end
 
+  def search
+    @pokemons = Pokemon.filter_by_name(params[:name])
+                       .filter_by_pokemon_type(params[:pokemon_type])
+                       .filter_by_region(params[:region])
+    @pokemon_types = Pokemon.distinct.pluck(:pokemon_type)
+    @regions = Pokemon.distinct.pluck(:region)
+  end
+
   private
     def set_pokemon
       @pokemon = Pokemon.find(params[:id])
     end
 
     def pokemon_params
-      params.require(:pokemon).permit(:name, :type, :region)
+      params.require(:pokemon).permit(:name, :pokemon_type, :region)
     end
 end
