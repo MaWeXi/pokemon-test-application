@@ -3,8 +3,8 @@
 <h1>Pokemon</h1>
 
 <%= form_with url: '/pokemon', method: :get, local: true do |f| %>
-  <%= f.label :search %>
-  <%= f.text_field :search %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
   <%= f.submit "Search" %>
 <% end %>
@@ -23,19 +23,7 @@
                 <th colspan="3"></th>
             </tr>
         </thead>
-
-        <tbody>
-            <% @pokemons.each do |pokemon| %>
-            <tr>
-                <td><%= pokemon.name %></td>
-                <td><%= pokemon.pokemon_type %></td>
-                <td><%= pokemon.region %></td>
-                <td><%= link_to 'Show', pokemon %></td>
-                <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
-                <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-            <% end %>
-        </tbody>
+        <%= render @pokemons %>
     </table>
 <% end %>
 

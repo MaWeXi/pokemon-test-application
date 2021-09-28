@@ -1,0 +1,10 @@
+<tbody>
+    <tr>
+        <td><%= pokemon.name %></td>
+        <td><%= pokemon.pokemon_type %></td>
+        <td><%= pokemon.region %></td>
+        <td><%= link_to 'Show', pokemon %></td>
+        <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
+        <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+</tbody>
