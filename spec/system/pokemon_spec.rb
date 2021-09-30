@@ -6,7 +6,7 @@ RSpec.describe "Pokemon", type: :system do
   end
 
   it "enables me to create pokemon" do
-    visit "/pokemon/new"
+    visit new_pokemon_path
 
     fill_in 'Name', :with => 'Groudon'
     fill_in 'Pokemon type', :with => 'Boden'
@@ -21,7 +21,7 @@ RSpec.describe "Pokemon", type: :system do
     pokemon_1 = Pokemon.create!(name: 'Voltilamm', pokemon_type: 'Elektro', region: 'Johto')
     pokemon_2 = Pokemon.create!(name: 'Groudon', pokemon_type: 'Boden', region: 'Hoenn')
 
-    visit "/pokemon"
+    visit root_path
 
     fill_in 'Name', :with => 'Groudon'
     click_button 'Search'
@@ -35,7 +35,7 @@ RSpec.describe "Pokemon", type: :system do
     pokemon_2 = Pokemon.create!(name: 'Eneco', pokemon_type: 'Normal', region: 'Hoenn')
     pokemon_3 = Pokemon.create!(name: 'Schiggy', pokemon_type: 'Wasser', region: 'Kanto')
 
-    visit "/pokemon/search"
+    visit search_pokemon_index_path
 
     select "Feuer", :from => "Pokemon type"
     select "Kanto", :from => "Region"
