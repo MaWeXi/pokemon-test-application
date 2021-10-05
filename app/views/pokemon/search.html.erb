@@ -1,6 +1,6 @@
 <h1>Advanced Search</h1>
 
-<%= form_with url: '/pokemon/search', method: :get, local: true do |f| %>
+<%= form_with url: "/pokemon/search", method: :get, local: true do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
 
@@ -33,4 +33,4 @@
 
 <br>
 
-<p><%= link_to "Back", '/pokemon' %></p>
+<p><%= link_to "Back", "/pokemon" %></p>

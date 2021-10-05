@@ -2,7 +2,7 @@
 
 <h1>Pokemon</h1>
 
-<%= form_with url: '/pokemon', method: :get, local: true do |f| %>
+<%= form_with url: "/pokemon", method: :get, local: true do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -29,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Pokemon', new_pokemon_path %>
+<%= link_to "New Pokemon", new_pokemon_path %>
