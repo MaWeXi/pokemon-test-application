@@ -18,10 +18,9 @@ RSpec.describe "Pokemon", type: :system do
   end
 
   it "enables me to search for a pokemon" do
+    visit root_path
     pokemon_1 = Pokemon.create!(name: "Voltilamm", pokemon_type: "Elektro", region: "Johto")
     pokemon_2 = Pokemon.create!(name: "Groudon", pokemon_type: "Boden", region: "Hoenn")
-
-    visit root_path
 
     fill_in "Name", :with => "Groudon"
     click_button "Search"
@@ -31,11 +30,10 @@ RSpec.describe "Pokemon", type: :system do
   end
 
   it "enables me to use the advanced search function to search for a pokemon" do
+    visit search_pokemon_index_path
     pokemon_1 = Pokemon.create!(name: "Glumanda", pokemon_type: "Feuer", region: "Kanto")
     pokemon_2 = Pokemon.create!(name: "Eneco", pokemon_type: "Normal", region: "Hoenn")
     pokemon_3 = Pokemon.create!(name: "Schiggy", pokemon_type: "Wasser", region: "Kanto")
-
-    visit search_pokemon_index_path
 
     select "Feuer", :from => "Pokemon type"
     select "Kanto", :from => "Region"
