@@ -1,0 +1,29 @@
+de:
+  pokemon:
+    index:
+      search: "Suche"
+      advanced_search: "Erweiterte Suche"
+      name: "Name"
+      type: "Typ"
+      region: "Region"
+      new_pokemon: "Neues Pokemon"
+    new:
+      new_pokemon: "Neues Pokemon"
+    search:
+      advanced_search: "Erweiterte Suche"
+
+    # Partials
+    pokemon:
+      show: "Anzeigen"
+      edit: "Bearbeiten"
+      destroy: "Löschen"
+      destroy_confirmation: "Bist du sicher?"
+    back:
+      back: "Zurück"
+
+  activerecord:
+    attributes:
+      pokemon:
+        name: "Name"
+        pokemon_type: "Typ"
+        region: "Region"
