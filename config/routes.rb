@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root "pokemon#index"
 
   resources :pokemon do
-    get 'search', on: :collection
+    get "search", on: :collection
   end
 end
