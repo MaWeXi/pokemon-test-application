@@ -49,6 +49,10 @@ en:
       show: "Show"
     search:
       advanced_search: "Advanced Search"
+      search: "Search"
+      name: "Name"
+      type: "Type"
+      region: "Region"
     
     # Partials
     pokemon:

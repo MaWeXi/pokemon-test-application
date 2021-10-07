@@ -18,6 +18,10 @@ de:
       show: "Anzeigen"
     search:
       advanced_search: "Erweiterte Suche"
+      search: "Suche"
+      name: "Name"
+      type: "Typ"
+      region: "Region"
 
     # Partials
     pokemon:
