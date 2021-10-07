@@ -40,6 +40,13 @@ en:
       new_pokemon: "New Pokemon"
     new:
       new_pokemon: "New Pokemon"
+    show:
+      name: "Name"
+      type: "Type"
+      region: "Region"
+      edit: "Edit"
+    edit:
+      show: "Show"
     search:
       advanced_search: "Advanced Search"
     

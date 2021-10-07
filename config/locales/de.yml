@@ -9,6 +9,13 @@ de:
       new_pokemon: "Neues Pokemon"
     new:
       new_pokemon: "Neues Pokemon"
+    show:
+      name: "Name"
+      type: "Typ"
+      region: "Region"
+      edit: "Bearbeiten"
+    edit:
+      show: "Anzeigen"
     search:
       advanced_search: "Erweiterte Suche"
 

@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong><%= t(".name") %>:</strong>
   <%= @pokemon.name %>
 </p>
 
 <p>
-  <strong>Pokemon type:</strong>
+  <strong><%= t(".type") %>:</strong>
   <%= @pokemon.pokemon_type %>
 </p>
 
 <p>
-  <strong>Region:</strong>
+  <strong><%= t(".region") %>:</strong>
   <%= @pokemon.region %>
 </p>
 
-<%= link_to "Edit", edit_pokemon_path(@pokemon) %> |
+<%= link_to t(".edit"), edit_pokemon_path(@pokemon) %> |
 <%= render "back" %>
