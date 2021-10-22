@@ -30,4 +30,42 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  pokemon:
+    index:
+      search: "Search"
+      advanced_search: "Advanced search"
+      name: "Name"
+      type: "Type"
+      region: "Region"
+      new_pokemon: "New Pokemon"
+    new:
+      new_pokemon: "New Pokemon"
+    show:
+      name: "Name"
+      type: "Type"
+      region: "Region"
+      edit: "Edit"
+    edit:
+      show: "Show"
+    search:
+      advanced_search: "Advanced Search"
+      search: "Search"
+      name: "Name"
+      type: "Type"
+      region: "Region"
+    
+    # Partials
+    pokemon:
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      destroy_conirmation: "Are you sure?"
+    back:
+      back: "Back"
+
+  activerecords:
+    attributes:
+      pokemon:
+        title: "Title"
+        pokemnon_type: "Type"
+        region: "Region"

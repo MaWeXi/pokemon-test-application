@@ -2,5 +2,5 @@
 
 <%= render "form", pokemon: @pokemon %>
 
-<%= link_to "Show", @pokemon %> |
-<%= link_to "Back", pokemon_index_path %>
+<%= link_to t(".show"), @pokemon %> |
+<%= render "back" %>

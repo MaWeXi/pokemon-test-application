@@ -1,16 +1,16 @@
-<h1>Advanced Search</h1>
+<h1><%= t(".advanced_search") %></h1>
 
-<%= form_with url: "/pokemon/search", method: :get, local: true do |f| %>
-    <%= f.label :name %>
+<%= form_with(url: "/pokemon/search", method: :get) do |f| %>
+    <%= f.label t(".name") %>
     <%= f.text_field :name %>
 
-    <%= f.label :pokemon_type %>
+    <%= f.label t(".type") %>
     <%= f.select :pokemon_type, options_for_select(@pokemon_types, params[:pokemon_type]), include_blank: true %><br>
 
-    <%= f.label :region %>
+    <%= f.label t(".region") %>
     <%= f.select :region, options_for_select(@regions, params[:region]), include_blank: true %><br><br>
 
-    <%= f.submit "Search" %>
+    <%= f.submit t(".search") %>
 <% end %>
 
 <br>
@@ -21,9 +21,9 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Region</th>
+                <th><%= t(".name") %></th>
+                <th><%= t(".type") %></th>
+                <th><%= t(".region") %></th>
                 <th colspan="3"></th>
             </tr>
         </thead>
@@ -31,6 +31,4 @@
     </table>
 <% end %>
 
-<br>
-
-<p><%= link_to "Back", "/pokemon" %></p>
+<p><%= render "back" %></p>

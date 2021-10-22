@@ -1,9 +1,12 @@
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 Rails.application.routes.draw do
-  root "pokemon#index"
 
-  resources :pokemon do
-    get "search", on: :collection
+  scope "(:locale)", locale: /en|de/ do
+    resources :pokemon do
+      get "search", on: :collection
+    end
+    
+    root "pokemon#index"
   end
 end

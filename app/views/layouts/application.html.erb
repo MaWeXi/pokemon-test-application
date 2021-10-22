@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <ul>
+      <li><%= link_to 'English', root_path(locale: :en) %></li>
+      <li><%= link_to 'Deutsch', root_path(locale: :de) %></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
