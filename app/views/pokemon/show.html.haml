@@ -1,0 +1,16 @@
+%p#notice= notice
+
+%p
+	%strong #{t(".name")}:
+	= @pokemon.name
+
+%p
+	%strong #{t(".type")}:
+	= @pokemon.pokemon_type
+
+%p
+	%strong #{t(".region")}:
+	= @pokemon.region
+
+= link_to t(".edit"), edit_pokemon_path(@pokemon)
+= render "back"

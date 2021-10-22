@@ -1,0 +1,8 @@
+%tbody
+  %tr
+    %td= pokemon.name
+    %td= pokemon.pokemon_type
+    %td= pokemon.region 
+    %td= link_to t(".show"), pokemon
+    %td= link_to t(".edit"), edit_pokemon_path(pokemon) 
+    %td= link_to t(".destroy"), pokemon, method: :delete, data: { confirm: t(".destroy_confirmation") }
