@@ -1,10 +1,10 @@
-= form_with model: @pokemon do |f|
-	- if @pokemon.errors.any?
+= form_with model: pokemon do |f|
+	- if pokemon.errors.any?
 		%h2
-			= pluralize(@pokemon.errors.count, "error")
+			= pluralize(pokemon.errors.count, "error")
 			prohibited this pokemon from being saved:
 		%ul
-			- @pokemon.errors.each do |error|
+			- pokemon.errors.each do |error|
 				%li= error.full_message
 
 	.field

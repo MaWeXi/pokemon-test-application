@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "pokemon/index", type: :view do
+RSpec.describe "/pokemon/index", type: :view do
   it "displays all the widgets" do
     assign(:pokemons, [
       Pokemon.create!(:name => "Glumanda", :pokemon_type => "Feuer", :region => "Kanto"),
@@ -10,6 +10,6 @@ RSpec.describe "pokemon/index", type: :view do
     render
 
     expect(rendered).to match /Glumanda/
-    expect(rendered).to match /Hoenn/
+    expect(rendered).to match /Groudon/
   end
 end

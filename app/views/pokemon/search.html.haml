@@ -1,16 +1,17 @@
 %h1= t(".advanced_search")
 
 = form_with url: search_pokemon_index_path, method: :get do |f|
-	= f.label t(".name")
+
+	= f.label :name
 	= f.text_field :name
 
-	= f.label t(".type")
+	= f.label :pokemon_type
 	= f.select :pokemon_type, options_for_select(@pokemon_types, params[:pokemon_type]), include_blank: true
 
-	= f.label t(".region")
+	= f.label :region
 	= f.select :region, options_for_select(@regions, params[:region]), include_blank: true
 	%br
-	%br
+
 	= f.submit t(".search")
 	%br
 	%br
