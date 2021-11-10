@@ -11,7 +11,7 @@
 
 <%= link_to t(".advanced_search"), search_pokemon_index_path %>
 
-<% if @pokemons.empty? %>
+<% if @pokemon.empty? %>
     <p>No Pokemon were found.</p>
 <% else %>
     <table>
@@ -23,7 +23,7 @@
                 <th colspan="3"></th>
             </tr>
         </thead>
-        <%= render @pokemons %>
+        <%= render @pokemon %>
     </table>
 <% end %>
 

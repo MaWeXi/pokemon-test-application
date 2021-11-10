@@ -3,7 +3,7 @@ class PokemonController < ApplicationController
 
   # GET
   def index
-    @pokemons = Pokemon.where(search_params)
+    @pokemon = Pokemon.where(search_params)
   end
 
   # GET
@@ -57,7 +57,7 @@ class PokemonController < ApplicationController
   end
 
   def search
-    @pokemons = Pokemon.where(search_params)
+    @pokemon = Pokemon.where(search_params)
 
     @pokemon_types = Pokemon.distinct.pluck(:pokemon_type)
     @regions = Pokemon.distinct.pluck(:region)
