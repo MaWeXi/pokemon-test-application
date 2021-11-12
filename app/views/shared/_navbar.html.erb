@@ -1,36 +1,79 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-dark text-white">
+  <!-- Container wrapper -->
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- Collapsible wrapper -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
+      <!-- Navbar brand -->
+      <ul class="nav ms-4">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <img class="img">
+            <%= image_tag("logos/pokeball.png", width: "32", height: "32") %>
+          </img>
+        </a>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <!-- Navbar brand -->
+
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto ms-2 mb-2 mb-lg-0">
+        <li><a><%= link_to "Home", root_path, class: "nav-link px-2 text-secondary" %></a></li>
+        <li><a><%= link_to "Advanced Search", search_pokemon_index_path, class: "nav-link px-2 text-white" %></a></li>
+      </ul>
+      <!-- Left links -->
     </div>
+    <!-- Collapsible wrapper -->
+
+    <!-- Right elements -->
+    <div class="d-flex align-items-center">
+      <div class="text-end">
+        <% if user_signed_in? %>
+          <div class="container">
+            <div class="dropdown d-inline-block" >
+              <button class="btn btn-outline-light me-2 dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.email %>
+              </button>
+              <ul
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+              <li>
+                <%= link_to "Profile", root_path, class: "dropdown-item ps-4" %>
+              </li>
+                <li>
+                  <%= link_to "Edit Password", root_path, class: "dropdown-item ps-4" %>
+                </li>
+              </ul>
+            </div>
+            <%= link_to "Logout", destroy_user_session_path, :method => :delete, class: "btn btn-danger" %>
+          </div>
+        <% else %>
+          <div class="container">
+            <%= link_to "Sign In", new_user_session_path, class: "btn btn-outline-light me-2" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-warning" %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          Language
+        </button>
+        <ul
+          class="dropdown-menu dropdown-menu-end"
+          aria-labelledby="navbarDropdownMenuLink"
+        >
+        <li>
+          <%= link_to "English", root_path(locale: :en), class: "dropdown-item ps-4" %>
+        </li>
+          <li>
+            <%= link_to "Deutsch", root_path(locale: :de), class: "dropdown-item ps-4" %>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    <!-- Right elements -->
   </div>
+  <!-- Container wrapper -->
 </nav>
+<!-- Navbar -->
