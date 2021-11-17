@@ -37,6 +37,7 @@ en:
       name: "Name"
       type: "Type"
       region: "Region"
+      clear_search: "Clear Search"
       new_pokemon: "New Pokemon"
     new:
       new_pokemon: "New Pokemon"

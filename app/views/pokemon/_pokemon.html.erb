@@ -3,8 +3,10 @@
         <td><%= pokemon.name %></td>
         <td><%= pokemon.pokemon_type %></td>
         <td><%= pokemon.region %></td>
-        <td><%= link_to t(".show"), pokemon %></td>
-        <td><%= link_to t(".edit"), edit_pokemon_path(pokemon) %></td>
-        <td><%= link_to t(".destroy"), pokemon, method: :delete, data: { confirm: t(".destroy_confirmation") } %></td>
+        <td>
+          <%= link_to t(".show"), pokemon %>
+          <%= link_to t(".edit"), edit_pokemon_path(pokemon) %>
+          <%= link_to t(".destroy"), pokemon, method: :delete, data: { confirm: t(".destroy_confirmation") } %>
+        </td>
     </tr>
 </tbody>

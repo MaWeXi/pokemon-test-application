@@ -5,6 +5,7 @@ class PokemonController < ApplicationController
   # GET
   def index
     @pokemon = Pokemon.where(search_params)
+    @name = search_params[:name]
   end
 
   # GET
@@ -59,6 +60,7 @@ class PokemonController < ApplicationController
 
   def search
     @pokemon = Pokemon.where(search_params)
+    @name = search_params[:name]
 
     @pokemon_types = Pokemon.distinct.pluck(:pokemon_type)
     @regions = Pokemon.distinct.pluck(:region)
