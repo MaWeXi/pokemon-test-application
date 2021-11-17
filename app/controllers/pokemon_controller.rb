@@ -1,9 +1,11 @@
 class PokemonController < ApplicationController
   before_action :set_pokemon, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET
   def index
-    @pokemons = Pokemon.where(search_params)
+    @pokemon = Pokemon.where(search_params)
+    @name = search_params[:name]
   end
 
   # GET
@@ -57,7 +59,8 @@ class PokemonController < ApplicationController
   end
 
   def search
-    @pokemons = Pokemon.where(search_params)
+    @pokemon = Pokemon.where(search_params)
+    @name = search_params[:name]
 
     @pokemon_types = Pokemon.distinct.pluck(:pokemon_type)
     @regions = Pokemon.distinct.pluck(:region)

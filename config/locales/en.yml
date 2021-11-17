@@ -37,6 +37,7 @@ en:
       name: "Name"
       type: "Type"
       region: "Region"
+      clear_search: "Clear Search"
       new_pokemon: "New Pokemon"
     new:
       new_pokemon: "New Pokemon"
@@ -66,6 +67,6 @@ en:
   activerecords:
     attributes:
       pokemon:
-        title: "Title"
-        pokemnon_type: "Type"
+        name: "Name"
+        pokemon_type: "Type"
         region: "Region"

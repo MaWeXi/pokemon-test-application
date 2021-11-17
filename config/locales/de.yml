@@ -6,6 +6,7 @@ de:
       name: "Name"
       type: "Typ"
       region: "Region"
+      clear_search: "Suche Löschen"
       new_pokemon: "Neues Pokemon"
     new:
       new_pokemon: "Neues Pokemon"

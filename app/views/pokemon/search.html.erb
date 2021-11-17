@@ -1,34 +1,39 @@
 <h1><%= t(".advanced_search") %></h1>
 
-<%= form_with(url: "/pokemon/search", method: :get) do |f| %>
+<p>
+  <%= form_with(url: search_pokemon_index_path, method: :get) do |f| %>
     <%= f.label t(".name") %>
-    <%= f.text_field :name %>
-
+    <%= f.text_field :name, :value => @name %>
+    <br>
     <%= f.label t(".type") %>
-    <%= f.select :pokemon_type, options_for_select(@pokemon_types, params[:pokemon_type]), include_blank: true %><br>
-
+    <%= f.select :pokemon_type, options_for_select(@pokemon_types, params[:pokemon_type]), include_blank: true %>
+    <br>
     <%= f.label t(".region") %>
-    <%= f.select :region, options_for_select(@regions, params[:region]), include_blank: true %><br><br>
-
+    <%= f.select :region, options_for_select(@regions, params[:region]), include_blank: true %>
+    <br>
     <%= f.submit t(".search") %>
-<% end %>
+  <% end %>
+</p>
 
-<br>
-
-<% if @pokemons.empty? %>
-    <p>No Pokemon were found.</p>
-<% else %>
-    <table>
-        <thead>
-            <tr>
-                <th><%= t(".name") %></th>
-                <th><%= t(".type") %></th>
-                <th><%= t(".region") %></th>
-                <th colspan="3"></th>
-            </tr>
-        </thead>
-        <%= render @pokemons %>
+<p>
+  <% if @pokemon.empty? %>
+      <p>No Pokemon were found.</p>
+  <% else %>
+    <table class="table table-hover table-sm">
+      <thead class="table-dark">
+        <tr>
+          <th style="width: 10%"><%= t(".name") %></th>
+          <th style="width: 10%"><%= t(".type") %></th>
+          <th style="width: 10%"><%= t(".region") %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+        <%= render @pokemon %>
     </table>
-<% end %>
+  <% end %>
+</p>
 
-<p><%= render "back" %></p>
+<p>
+  <%= link_to "Back", :back %> |
+  <%= link_to t(".clear_search"), search_pokemon_index_path %>
+</p>

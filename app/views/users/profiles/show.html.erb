@@ -1,0 +1,17 @@
+<p>
+  <strong>Username:</strong>
+  <%= current_user.username %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= current_user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= current_user.encrypted_password %>
+</p>
+
+<%= link_to "Edit Profile", edit_user_registration_path %> |
+<%= link_to "Back", :back %>

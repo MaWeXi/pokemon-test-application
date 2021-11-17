@@ -12,8 +12,8 @@ RSpec.describe "Pokemon", type: :system do
     fill_in "Pokemon type", :with => "Boden"
     fill_in "Region", :with => "Hoenn"
     click_button "Create Pokemon"
-    
-    expect(page).to have_current_path("/pokemon/1")
+
+    expect(page).to have_current_path(pokemon_path(locale: "en", id: 1))
     expect(page).to have_text("Groudon")
   end
 
