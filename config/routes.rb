@@ -3,12 +3,18 @@
 Rails.application.routes.draw do
 
   scope "(:locale)", locale: /en|de/ do
+
+    root "pokemon#index"
+
     resources :pokemon do
       get "search", on: :collection
     end
 
-    devise_for :users
+    devise_for :users, controllers: { profiles: "users/profiles" }
 
-    root "pokemon#index"
+    namespace :users do
+      get "profiles/show"
+      get "profiles/edit"
+    end
   end
 end
