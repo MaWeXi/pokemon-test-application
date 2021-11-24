@@ -54,7 +54,7 @@ en:
       name: "Name"
       type: "Type"
       region: "Region"
-    
+
     # Partials
     pokemon:
       show: "Show"
@@ -64,7 +64,7 @@ en:
     back:
       back: "Back"
 
-  activerecords:
+  activerecord:
     attributes:
       pokemon:
         name: "Name"
